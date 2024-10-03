@@ -10,7 +10,6 @@
 ```
 node_modules/
 package-lock.json
-dist/
 .DS_Store
 npm-debug.log*
 yarn-debug.log*
