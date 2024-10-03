@@ -5,6 +5,23 @@
 * [git](https://git-scm.com/downloads)
 * [Cuenta en github](https://github.com/)
 
+* Crear el archivo .gitignore con el siguiente contenido
+
+```
+node_modules/
+package-lock.json
+dist/
+.DS_Store
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.vscode/
+.idea/
+Thumbs.db
+.env
+
+```
+
 ## Pasos para subir proyecto a github
 
 ### Repositorio sin el archivo README.md
