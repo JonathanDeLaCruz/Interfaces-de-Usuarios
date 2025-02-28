@@ -1,4 +1,4 @@
-# 📱 Guía para Interfaces de Usuario
+# 📱 Interfaces de Usuario
 
 Bienvenido a este repositorio dedicado para la materia de interfaces de usuario. Aquí encontrarás documentación y guías para implementar correctamente tecnologías modernas en la creación de interfaces atractivas y funcionales.
 
