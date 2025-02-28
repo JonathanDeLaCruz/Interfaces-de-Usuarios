@@ -1,11 +1,11 @@
-# Deployar a producción con GIT
+# Deployar a Producción con GIT
 
 ## Requisitos
 
-* [git](https://git-scm.com/downloads)
-* [Cuenta en github](https://github.com/)
+* [Git](https://git-scm.com/downloads)
+* [Cuenta en GitHub](https://github.com/)
 
-* Crear el archivo .gitignore con el siguiente contenido
+### Crear el archivo `.gitignore` con el siguiente contenido:
 
 ```
 node_modules/
@@ -18,115 +18,117 @@ yarn-error.log*
 .idea/
 Thumbs.db
 .env
-
 ```
 
-## Pasos para subir proyecto a github
+## Pasos para subir un proyecto a GitHub
 
-### Repositorio sin el archivo README.md
+### Repositorio sin el archivo `README.md`
 
-1. Crear un nuevo repositorio en github
+1. Crear un nuevo repositorio en GitHub:
+   * Asigna el nombre de tu proyecto como nombre del repositorio.
+   * Establece el repositorio como **público**.
+   * No añadas el archivo `README.md`.
 
-   * El nombre de repositorio agreguen el nombre de su proyecto
-   * Repositorio público
-   * No añadas el README file
+2. Abre tu proyecto en **VS Code**.
 
-2. Abrir tu proyecto en él con VSCode
+3. Ejecuta los siguientes comandos en la terminal:
 
-3. Ejecuta los siguientes comando en la terminal
+   * Crea el archivo `README.md` con el nombre de tu proyecto:
+     ```sh
+     echo "# repositorio" >> README.md
+     ```
+   * Inicializa el repositorio local:
+     ```sh
+     git init
+     ```
+   * Añade todos los archivos al repositorio local:
+     ```sh
+     git add .
+     ```
+   * Agrega un mensaje descriptivo para identificar los cambios realizados:
+     ```sh
+     git commit -m "Mi proyecto en GitHub"
+     ```
+   * Selecciona la rama `main` (creada por defecto en el proyecto):
+     ```sh
+     git branch -M main
+     ```
+   * Crea la conexión con el repositorio remoto usando la URL de tu repositorio:
+     ```sh
+     git remote add origin https://github.com/Usuario/repositorio.git
+     ```
+   * Sube los archivos al servidor:
+     ```sh
+     git push -u origin main
+     ```
 
-  * Creamos el archivo README.md con el nombre de nuestro proyecto
+### Repositorio con el archivo `README.md`
 
-    `echo "# repositorio" >> README.md`
+1. Crear un nuevo repositorio en GitHub:
+   * Asigna el nombre de tu proyecto como nombre del repositorio.
+   * Establece el repositorio como **público**.
+   * Añade el archivo `README.md`.
 
-  * Inicializamos el repositorio local
+2. Abre tu proyecto en **VS Code**.
 
-    `git init`
+3. Ejecuta los siguientes comandos en la terminal:
 
-  * Añadimos todos los archivos al repositorio local
+   * Inicializa el repositorio local:
+     ```sh
+     git init
+     ```
+   * Añade todos los archivos al repositorio local:
+     ```sh
+     git add .
+     ```
+   * Agrega un mensaje descriptivo para identificar los cambios realizados:
+     ```sh
+     git commit -m "Mi proyecto en GitHub"
+     ```
+   * Selecciona la rama `main` (creada por defecto en el proyecto):
+     ```sh
+     git branch -M main
+     ```
+   * Crea la conexión con el repositorio remoto usando la URL de tu repositorio:
+     ```sh
+     git remote add origin https://github.com/Usuario/repositorio.git
+     ```
+   * Descarga del repositorio remoto el archivo `README.md`:
+     ```sh
+     git pull origin main --allow-unrelated-histories
+     ```
+   * Sube los archivos al servidor:
+     ```sh
+     git push -u origin main
+     ```
 
-    `git add .`
+## Deployar a producción con GitHub Pages
 
-  * Con el comando -m añadimos un mensaje que sea lo más descriptivo posible para identificar los cambios realizados
-
-    `git commit -m "Mi proyecto en github"`
-
-  * Seleccionamos la rama main que es la rama que se crea por defecto en nuestro proyecto
-
-    `git branch -M main`
-
-  * Creamos la conexión con el repositorio remoto con la ruta de nuestro repositorio
-
-    `git remote add origin https://github.com/Usuario/repositorio.git`
-
-  * Subimos los archivos al servidor
-
-    `git push -u origin main`
-
-### Repositorio con el archivo README.md
-
-1. Crear un nuevo repositorio en github
-
-   * El nombre de repositorio agreguen el nombre de su proyecto
-   * Repositorio público
-   * Añade el README file
-
-2. Abrir tu proyecto en él con VSCode
-
-3. Ejecuta los siguientes comando en la terminal
-
-  * Inicializamos el repositorio local
-
-    `git init`
-
-  * Añadimos todos los archivos al repositorio local
-
-    `git add .`
-
-  * Con el comando -m añadimos un mensaje que sea lo más descriptivo posible para identificar los cambios realizados
-
-    `git commit -m "Mi proyecto en github"`
-
-  * Seleccionamos la rama main que es la rama que se crea por defecto en nuestro proyecto
-
-    `git branch -M main`
-
-  * Creamos la conexión con el repositorio remoto con la ruta de nuestro repositorio
-
-    `git remote add origin https://github.com/Usuario/repositorio.git`
-
-  * Descargamos del repositorio remoto el archivo README.md
-
-    `git pull origin main --allow-unrelated-histories`
-
-  * Subimos los archivos al servidor
-
-    `git push -u origin main`
-
-## Deployar a producción con GIT
-
-  1. Seleccionamos en github en nuestro repositorio en la opción **Settings**
-
-  2. Seleccionamos la opción **Pages**
-
-  3. En el apartado **Branch** seleccionamos en donde dice ***None*** la rama donde se encuentra nuestro proyecto, en este manual sería la rama **main**
-
-  4. Seleccionamos la ubicación de nuestro archivo index.html, que se debe encontrarse en **/ (root)** y seleccionamos la opción ***Save***
-
-  5. El proceso de desployar a producción nuestro proyecto puede tardar un par de minutos, esperamos y recargamos la vista.
-
-  6. Nos aparecerá el mensaje **Your site is live at https://usuario.github.io/repositorio/** que será la URL de nuestro proyecto ya funcionando.
+1. En **GitHub**, accede a tu repositorio y selecciona la opción **Settings**.
+2. Desplázate hasta la sección **Pages**.
+3. En el apartado **Branch**, selecciona la rama donde se encuentra tu proyecto (en este caso, `main`).
+4. En la ubicación del archivo `index.html`, selecciona **/ (root)** y haz clic en **Save**.
+5. El proceso de despliegue puede tardar unos minutos. Espera y recarga la página.
+6. Una vez completado, aparecerá el mensaje:
+   ```
+   Your site is live at https://usuario.github.io/repositorio/
+   ```
+   Esta será la URL de tu proyecto en producción.
 
 ## Subir cambios
 
-* Añadimos todos los archivos al repositorio local
+Cada vez que realices cambios en tu proyecto, sigue estos pasos para subirlos a GitHub:
 
-    `git add .`
-    
-* Con el comando -m añadimos un mensaje que sea lo más descriptivo posible para identificar los cambios realizados
+* Añade todos los archivos al repositorio local:
+  ```sh
+  git add .
+  ```
+* Agrega un mensaje descriptivo para identificar los cambios realizados:
+  ```sh
+  git commit -m "Actualización de proyecto"
+  ```
+* Sube los archivos al servidor:
+  ```sh
+  git push -u origin main
+  ```
 
-    `git commit -m "Mi proyecto en github"`
-    
-* Subimos los archivos al servidor
-
-    `git push -u origin main`
