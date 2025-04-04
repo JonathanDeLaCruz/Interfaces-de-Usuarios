@@ -7,10 +7,17 @@
 
 ## Primer proyecto con Tailwind
 
+* Elimina node_modules y limpia la cache
+```javascript
+rd /s /q node_modules
+del package-lock.json
+npm cache clean --force
+```
+
 * Creamos la carpeta donde trabajaremos el proyecto y abrimos la terminal
 
 ```javascript
-  npm install tailwindcss --save
+  npm install -D tailwindcss@3.4.1
 ```
 
 * Añadiendo Tailwind, creamos un archivo main.css y agregamos lo siguiente:
